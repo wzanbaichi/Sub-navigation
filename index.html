@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二级导航（jquery）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .nav .ct {
+            list-style: none;
+            width: 200px;
+            background-color: #ff516a;
+            padding: 0;
+        }
+
+        .nav .ct > li {
+            background-color: #ff516a;
+            color: white;
+            /*padding: 15px;*/
+            border-bottom: 1px dashed #db93ae;
+            line-height: 35px;
+            cursor: pointer;
+        }
+        .nav .ct >li>p {
+            padding: 15px;
+        }
+
+        #nav-1, #nav-2, #nav-3, #nav-4, #nav-5 {
+            display: none;
+            list-style: none;
+            width: 120px;
+            padding: 0px;
+            position: absolute;
+            left: 200px;
+            top: 0px;
+            background-color: #ff9baa;
+            color: white;
+            height: 66px;
+            padding-left: 15px;
+        }
+        #nav-2 {
+            top: 66px;
+        }
+        #nav-3 {
+            top: 132px;
+        }
+        #nav-4 {
+            top: 198px;
+        }
+        #nav-5 {
+            top: 264px;
+        }
+
+        .nav .ct ul>li {
+            float: left;
+            width: 50px;
+            font-size: 13px;
+            margin-left: 10px;
+            cursor: pointer;
+            margin-top: -1px;
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <ul class='ct'>
+        <li><p>珠宝玉器&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+            <ul id="nav-1">
+                <li>翡翠</li>
+                <li>玉石</li>
+                <li>玛瑙</li>
+                <li>珍珠</li>
+            </ul>
+        </li>
+        <li><p>珠宝玉器&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+            <ul id="nav-2">
+                <li>翡翠</li>
+                <li>玉石</li>
+                <li>玛瑙</li>
+                <li>珍珠</li>
+            </ul>
+        </li>
+        <li><p>珠宝玉器&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+            <ul id="nav-3">
+                <li>翡翠</li>
+                <li>玉石</li>
+                <li>玛瑙</li>
+                <li>珍珠</li>
+            </ul>
+        </li>
+        <li><p>珠宝玉器&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+            <ul id="nav-4">
+                <li>翡翠</li>
+                <li>玉石</li>
+                <li>玛瑙</li>
+                <li>珍珠</li>
+            </ul>
+        </li>
+        <li><p>珠宝玉器&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp></p>
+            <ul id="nav-5">
+                <li>翡翠</li>
+                <li>玉石</li>
+                <li>玛瑙</li>
+                <li>珍珠</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+</div>
+<script src='jquery-3.2.1.js'></script>
+<script>
+//    var $ct = $('.ct>li');
+//    $ct.each(function(){
+//      $(this).hover(function(){
+////        $(this).siblings().addClass('active')
+////        $(this).parents('li').siblings('li').children('ul').removeClass('active')
+//        $(this).children('ul').addClass('active')
+//        $(this).siblings('li').children('ul').removeClass('active')
+//      },function(){
+//       $(this).parent().find('ul').removeClass('active')
+//      })
+//    })
+
+
+
+    var $ct = $('.ct');
+    $ct.on('mouseenter','p',function () {
+      $(this).siblings().addClass('active')
+      $(this).parents('li').siblings('li').children('ul').removeClass('active')
+      $('.active').on('mouseleave',function () {
+        $(this).removeClass('active')
+      })
+    })
+
+
+
+
+</script>
+</body>
+</html>
